@@ -19,6 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <audio loop ref={this.ref} src={Chime} />
+        <button onClicK={this.ref.current.play}>PLAY</button>
       </div>
     );
   }
