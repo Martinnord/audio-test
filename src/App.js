@@ -7,19 +7,37 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.ref = createRef();
+    this.state = {
+      muted: true,
+    };
   }
 
-  componentDidMount() {
-    if (this.ref.current !== null) {
-      this.ref.current.play();
-    }
-  }
+  // componentDidMount() {
+  //   if (this.ref.current !== null) {
+  //     this.ref.current.play();
+  //   }
+  // }
+
+  handleClick = () => {
+    this.ref.current.play();
+  };
+
+  toggleMuted = () => {
+    this.setState((curr) => ({ muted: !curr.muted }));
+  };
 
   render() {
+    console.log(this.ref.current);
+
+    const { muted } = this.state;
+
     return (
       <div className="App">
-        <audio loop ref={this.ref} src={Chime} />
-        <button onClicK={this.ref.current.play}>PLAY</button>
+        <audio muted={muted} autoPlay loop ref={this.ref} src={Chime} />
+        <button onClick={this.handleClick}>PLAY</button>
+        <button onClick={this.toggleMuted}>
+          MUTED: {muted ? "YES" : "NO"}
+        </button>
       </div>
     );
   }
