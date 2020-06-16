@@ -35,6 +35,7 @@ class App extends Component {
         <iframe
           allow="autoplay"
           id="audio"
+          src=""
           style={{ display: "none" }}
         ></iframe>
         <audio id="player" autoPlay loop>
