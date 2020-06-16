@@ -33,7 +33,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <audio muted={muted} autoPlay loop ref={this.ref} src={Chime} />
+        <audio autoPlay loop ref={this.ref} src={Chime} />
         <button onClick={this.handleClick}>PLAY</button>
         <button onClick={this.toggleMuted}>
           MUTED: {muted ? "YES" : "NO"}
