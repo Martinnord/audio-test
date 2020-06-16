@@ -12,12 +12,13 @@ class App extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   if (this.ref.current !== null) {
-  //     this.ref.current.click();
-  //     // this.ref.current.play();
-  //   }
-  // }
+  componentDidMount() {
+    if (this.ref.current !== null) {
+      this.ref.current.click();
+      // this.setState({ muted: false });
+      this.ref.current.play();
+    }
+  }
 
   onPlay = () => {
     this.setState({ muted: false });
@@ -31,7 +32,7 @@ class App extends Component {
 
     return (
       <div className="App" style={{ height: "100vh" }} onClick={this.onPlay}>
-        <audio loop autoPlay muted={muted} ref={this.ref} src={Chime} />
+        <audio loop autoPlay muted={false} ref={this.ref} src={Chime} />
         <button onClick={this.toggleMuted}>
           MUTED: {muted ? "YES" : "NO"}
         </button>
