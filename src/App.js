@@ -1,5 +1,4 @@
 import React, { Component, createRef } from "react";
-import logo from "./logo.svg";
 import Chime from "./chime.wav";
 import "./App.css";
 
@@ -28,17 +27,15 @@ class App extends Component {
   render() {
     console.log(this.ref.current);
 
-    const { muted } = this.state;
-
     return (
       <div className="App" style={{ height: "100vh" }}>
         <h3>{window.location.host.split(".")[0]} is your sub domain</h3>
-        <iframe
+        {/* <iframe
           allow="autoplay"
           id="audio"
           src=""
           style={{ display: "none" }}
-        ></iframe>
+        ></iframe> */}
         <audio id="player" autoPlay loop>
           <source src={Chime} type="audio/wav" />
         </audio>
