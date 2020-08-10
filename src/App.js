@@ -32,6 +32,7 @@ class App extends Component {
 
     return (
       <div className="App" style={{ height: "100vh" }}>
+<h3>{location.host.split(".")[0]} is your sub domain</h3>
         <iframe
           allow="autoplay"
           id="audio"
